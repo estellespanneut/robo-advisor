@@ -37,6 +37,10 @@ pip install -r requirements.txt
 ```
 ---
 
+In in the root directory of your local repository, create a new file called ".env", and update the contents of the ".env" file to specify the following variables:
+```sh
+ALPHAVANTAGE_API_KEY="abc123" #change the contents of the API key to match your own API key
+```
 
 ## Program Instructions 
 
@@ -49,3 +53,10 @@ python app/robo_advisor.py
 ```
 
 The following message should be displayed:
+
+
+
+DO THIS:
+It also includes instructions for setting an environment variable named ALPHAVANTAGE_API_KEY (see "Security Requirements" section below).
+
+pip install requests
