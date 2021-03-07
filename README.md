@@ -12,7 +12,7 @@
 
 ## Program Overview
 
-This program...
+This program allows you to enter a stock ticker symbol, and will recommend whether or not the user should invest based on the program's algorithm.
 
 ## Setup
 
@@ -41,6 +41,14 @@ In in the root directory of your local repository, create a new file called ".en
 ```sh
 ALPHAVANTAGE_API_KEY="abc123" #change the contents of the API key to match your own API key
 ```
+If you don't have an API key yet, go to the following website and follow the instructions:
+https://www.alphavantage.co/support/#api-key
+
+
+If you haven't already, make sure to install the requests package :
+```sh
+pip install requests
+```
 
 ## Program Instructions 
 
@@ -53,10 +61,12 @@ python app/robo_advisor.py
 ```
 
 The following message should be displayed:
+```
+Please input your desired stock:
 
+```
 
+From there, please input your desired stock symbol and press enter. 
 
-DO THIS:
-It also includes instructions for setting an environment variable named ALPHAVANTAGE_API_KEY (see "Security Requirements" section below).
+NOTE: If you enter something that does not resemble a stock symbol (such as numbers or a string longer than 5 characters), the program will ask you to input something else. IF you enter something that could potentially look like a stock symbol but that doesn't exists (such as a random string of 4 characters that don't correspond to a real stock), the problem will quit, and you will have to restart it to try again.
 
-pip install requests
