@@ -193,7 +193,7 @@ csv_filename = "data/stocks.csv"
 stocks_df = pd.read_csv(csv_filename)
 import seaborn as sns
 ax = sns.lineplot(data=stocks_df, x="timestamp", y="close", legend='full')
-plt.xlabel("Date")
+plt.xlabel("Time - most recent to least")
 plt.ylabel("Closing Price (USD)")
 plt.title("Stock price over time", size=24)
 
