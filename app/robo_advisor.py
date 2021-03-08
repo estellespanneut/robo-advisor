@@ -1,4 +1,5 @@
 # this is the "app/robo_advisor.py" file
+#GENERAL ATTRIBUTIONS: a lot of this content was taken from class material, including lecture, class Github, slack, and more.
 
 #import all packages
 import requests
@@ -132,7 +133,7 @@ threshold2 = float(threshold)*float(recent_low)
 recommendation = "Null"
 recommendation_reason = "Null"
 
-if latest_close < recent_low:
+if latest_close < threshold2:
     #print(to_usd(threshold2))
     recommendation = "Buy"
     recommendation_reason = "The stock's latest closing price is less than 15 percent above its recent low"
@@ -180,6 +181,26 @@ with open(csv_file_path, "w") as csv_file:
             "close": parsed_response["Time Series (Daily)"][dates]["4. close"],
             "volume": parsed_response["Time Series (Daily)"][dates]["5. volume"]
         })
+
+#+++++++++++++++++++++
+
+import pandas as pd
+from pandas import DataFrame
+import matplotlib.pyplot as plt
+
+
+csv_filename = "data/stocks.csv"
+stocks_df = pd.read_csv(csv_filename)
+import seaborn as sns
+ax = sns.lineplot(data=stocks_df, x="timestamp", y="close", legend='full')
+plt.xlabel("Date")
+plt.ylabel("Closing Price (USD)")
+plt.title("Stock price over time", size=24)
+
+plt.show()
+
+#ATTRIBUTION: https://stackoverflow.com/questions/26597116/seaborn-plots-not-showing-up
+#This website showed me how to display my line plot after I already set it up
 
         
 

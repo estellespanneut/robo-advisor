@@ -37,6 +37,14 @@ pip install -r requirements.txt
 ```
 ---
 
+Install Pandas and Seaborn from the command line if you haven't already:
+
+```sh
+pip install pandas
+pip install seaborn
+```
+---
+
 In in the root directory of your local repository, create a new file called ".env", and update the contents of the ".env" file to specify the following variables:
 ```sh
 ALPHAVANTAGE_API_KEY="abc123" #change the contents of the API key to match your own API key
